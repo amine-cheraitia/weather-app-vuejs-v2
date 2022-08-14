@@ -1,6 +1,12 @@
 <template>
 	<div class="main">
-		<div class="container" :class="{ warm: isWard }">
+		<div
+			class="container"
+			:class="{
+				/*warm: isWard */
+			}"
+			:style="{ backgroundImage: `url(${img})` }"
+		>
 			<div class="filter">
 				<div class="search-b">
 					<input
@@ -36,6 +42,8 @@
 
 <script>
 import axios from "axios";
+import imgWarm from "@/assets/warm-bg.jpg";
+import imgCold from "@/assets/cold-bg.jpg";
 export default {
 	name: "App",
 	data() {
@@ -88,9 +96,9 @@ export default {
 		},
 		img() {
 			if (this.weather.temperature > 18) {
-				return "./assets/cold-bg.jpg";
+				return imgWarm;
 			} else {
-				return "./assets/warm-bg.jpg";
+				return imgCold;
 			}
 		},
 	},
