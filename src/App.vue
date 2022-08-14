@@ -8,7 +8,7 @@
 						id="searchbar"
 						v-model="location"
 						placeholder="Search..."
-						@keyup="lookForWeather"
+						@keydown="lookForWeather"
 					/>
 				</div>
 				<div class="inner-container" v-if="typeof weather.name != 'undefined'">
@@ -48,7 +48,7 @@ export default {
 	methods: {
 		lookForWeather(e) {
 			if (e.key == "Enter") {
-				this.weather = {};
+				/* this.weather = {}; */
 				console.log(this.weather.main);
 				axios
 					.post(
@@ -86,6 +86,13 @@ export default {
 		isWard() {
 			return this.weather.temperature > 20;
 		},
+		img() {
+			if (this.weather.temperature > 18) {
+				return "./assets/cold-bg.jpg";
+			} else {
+				return "./assets/warm-bg.jpg";
+			}
+		},
 	},
 };
 </script>
@@ -110,18 +117,18 @@ export default {
 	background-image: url("./assets/cold-bg.jpg");
 	background-size: cover;
 	background-position: bottom;
-	transition: 0.4s;
+	transition: backgroundImage 0.8s ease-in;
 	height: 90vh;
 	width: 450px;
 	border-radius: 10px;
 	/* 	border: black 0.5px solid;
 	outline: none; */
 	color: white;
-	transition: 0.8s;
 }
 
 .warm {
 	background-image: url("./assets/warm-bg.jpg");
+	transition: backgroundImage 0.8s ease-in;
 }
 .main {
 	display: flex;
