@@ -122,10 +122,10 @@ export default {
 }
 
 .container {
-	background-image: url("./assets/cold-bg.jpg");
+	/* background-image: url("./assets/cold-bg.jpg") */
 	background-size: cover;
 	background-position: bottom;
-	transition: backgroundImage 0.8s ease-in;
+	transition: 0.8s ease-in;
 	height: 90vh;
 	width: 450px;
 	border-radius: 10px;
