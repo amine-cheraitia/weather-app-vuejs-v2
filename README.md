@@ -1,5 +1,9 @@
 # weather-app
 
+## Live Version
+```
+https://amine-cheraitia.github.io/weather-app-vuejs-v2/
+
 ## Project setup
 ```
 npm install
